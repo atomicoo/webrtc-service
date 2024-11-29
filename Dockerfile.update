@@ -1,0 +1,7 @@
+FROM ml-a800-cn-shanghai.cr.volces.com/dev_env/mm-voice-webrtc:v1.2.11
+
+COPY ./app /root/FunASR/rtc-service/app
+
+COPY build_env.sh /root/FunASR/rtc-service/build_env.sh
+# COPY app/third_party/cosyvoice_inference/dist/cosyvoice-0.0.1-py3-none-any.whl /root/FunASR/rtc-service/app/cosyvoice-0.0.1-py3-none-any.whl
+RUN sh /root/FunASR/rtc-service/build_env.sh
